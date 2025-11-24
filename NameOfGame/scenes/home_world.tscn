@@ -76,6 +76,6 @@ texture = ExtResource("5_hi87r")
 
 [node name="SeaPortal" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(560.00006, 432)
-scale = Vector2(2.306, 1.75)
+position = Vector2(551.104, 436)
+scale = Vector2(2.0279987, 1.625)
 texture = ExtResource("6_2wwgh")
