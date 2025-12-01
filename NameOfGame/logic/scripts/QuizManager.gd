@@ -2,7 +2,7 @@ extends Node
 
 signal quiz_finished(success: bool)
 
-@onready var quiz_ui_scene = preload("res://oldGame/scenes/enemy_quiz_ui.tscn")
+@onready var quiz_ui_scene = preload("res://logic/scenes/enemy_quiz_ui.tscn")
 var quiz_ui_instance: CanvasLayer
 var all_questions = []
 var selected_questions = []
@@ -14,7 +14,7 @@ func _ready():
 	load_questions()
 
 func load_questions():
-	var file = FileAccess.open("res://oldGame/scripts/JSON/quiz_questions.json", FileAccess.READ)
+	var file = FileAccess.open("res://logic/scripts/JSON/quiz_questions.json", FileAccess.READ)
 	if file:
 		var data = JSON.parse_string(file.get_as_text())
 		if typeof(data) == TYPE_DICTIONARY and "questions" in data:

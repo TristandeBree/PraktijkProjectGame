@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b63s58tw8n51g" path="res://items/bamboo_sticks.tscn" id="5_aimfc"]
 [ext_resource type="PackedScene" uid="uid://cu8irxdkrawqh" path="res://enemies/scenes/geelkeelmarter.tscn" id="6_nmhdb"]
 [ext_resource type="PackedScene" uid="uid://b5sciffoo4doq" path="res://enemies/scenes/snake.tscn" id="7_nmhdb"]
-[ext_resource type="PackedScene" uid="uid://bqo0pxgtcls70" path="res://scenes/sum_ui.tscn" id="8_t5ni6"]
-[ext_resource type="PackedScene" uid="uid://2js5sxpl1u0" path="res://scenes/hud.tscn" id="9_kclwk"]
+[ext_resource type="PackedScene" uid="uid://bqo0pxgtcls70" path="res://worlds/homeworld/sum_ui.tscn" id="8_t5ni6"]
+[ext_resource type="PackedScene" uid="uid://2js5sxpl1u0" path="res://worlds/homeworld/hud.tscn" id="9_kclwk"]
 
 [node name="IntroLevel" type="Node2D"]
 

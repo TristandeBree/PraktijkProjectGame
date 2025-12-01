@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqo0pxgtcls70"]
 
-[ext_resource type="Script" uid="uid://cqc1foql1oepl" path="res://scripts/sum_ui.gd" id="2_ykuur"]
+[ext_resource type="Script" uid="uid://cqc1foql1oepl" path="res://logic/scripts/sum_ui.gd" id="2_ykuur"]
 [ext_resource type="Theme" uid="uid://crv1faefr6pa6" path="res://themes/sum_ui.tres" id="3_agkjb"]
 [ext_resource type="Texture2D" uid="uid://c26l75w0i6rwf" path="res://assets/ui/sum_ui_bg.png" id="4_mqu1p"]
 

@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-QuestManager="*res://oldGame/scripts/QuestManager.gd"
+QuestManager="*res://logic/scripts/QuestManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-QuizManager="*res://oldGame/scripts/QuizManager.gd"
+QuizManager="*res://logic/scripts/QuizManager.gd"
 PlayerData="*res://characters/scripts/PlayerData.gd"
 
 [dialogic]
