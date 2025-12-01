@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://db86lj4xekvi7"]
+[gd_scene load_steps=12 format=4 uid="uid://db86lj4xekvi7"]
 
 [ext_resource type="Script" uid="uid://ca1qc17qqyh42" path="res://worlds/homeworld/scripts/home_world.gd" id="1_jjqr7"]
 [ext_resource type="PackedScene" uid="uid://c15n2rhyambd" path="res://characters/scenes/player.tscn" id="2_pd26j"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dsqwjr0xqhqx0" path="res://worlds/homeworld/portals/jungle_portal.tscn" id="7_5p35a"]
 [ext_resource type="PackedScene" uid="uid://wefou6fko2mx" path="res://worlds/homeworld/portals/ice_portal.tscn" id="8_mh43n"]
 [ext_resource type="TileSet" uid="uid://bk5fbf1bk80uy" path="res://assets/tiles/trees/trees.tres" id="9_pd26j"]
+[ext_resource type="PackedScene" uid="uid://2js5sxpl1u0" path="res://worlds/homeworld/hud.tscn" id="10_b75s3"]
+[ext_resource type="PackedScene" uid="uid://bqo0pxgtcls70" path="res://worlds/homeworld/sum_ui.tscn" id="11_2133q"]
 
 [node name="HomeWorld" type="Node2D"]
 script = ExtResource("1_jjqr7")
@@ -43,3 +45,18 @@ z_index = -1
 position = Vector2(0, -31)
 tile_map_data = PackedByteArray("AAAwAAEAAQAAAAAAAAA=")
 tile_set = ExtResource("9_pd26j")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("10_b75s3")]
+unique_name_in_owner = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SumUI" parent="CanvasLayer" node_paths=PackedStringArray("snake") instance=ExtResource("11_2133q")]
+visible = false
+offset_left = 493.02557
+offset_top = 290.3589
+offset_right = 717.0256
+offset_bottom = 360.3589
+snake = NodePath("")

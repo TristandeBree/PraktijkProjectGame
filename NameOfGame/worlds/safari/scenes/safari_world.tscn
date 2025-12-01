@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://dptvao563xn4e"]
+[gd_scene load_steps=5 format=4 uid="uid://dptvao563xn4e"]
 
 [ext_resource type="TileSet" uid="uid://dqmb13l4b00me" path="res://assets/tiles/tilesets/all_tiles.tres" id="1_5jyqj"]
 [ext_resource type="PackedScene" uid="uid://c15n2rhyambd" path="res://characters/scenes/player.tscn" id="2_rcrn5"]
+[ext_resource type="PackedScene" uid="uid://2js5sxpl1u0" path="res://worlds/homeworld/hud.tscn" id="3_nyoeo"]
+[ext_resource type="PackedScene" uid="uid://bqo0pxgtcls70" path="res://worlds/homeworld/sum_ui.tscn" id="4_1jr5p"]
 
 [node name="Safari_world" type="Node2D"]
 
@@ -11,3 +13,18 @@ tile_set = ExtResource("1_5jyqj")
 
 [node name="Player" parent="." instance=ExtResource("2_rcrn5")]
 position = Vector2(16, 223)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("3_nyoeo")]
+unique_name_in_owner = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SumUI" parent="CanvasLayer" node_paths=PackedStringArray("snake") instance=ExtResource("4_1jr5p")]
+visible = false
+offset_left = 493.02557
+offset_top = 290.3589
+offset_right = 717.0256
+offset_bottom = 360.3589
+snake = NodePath("")
