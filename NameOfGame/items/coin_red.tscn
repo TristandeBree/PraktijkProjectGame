@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://ci1jhprdgfal"]
+[gd_scene load_steps=15 format=3 uid="uid://ci1jhprdgfal"]
 
+[ext_resource type="Script" uid="uid://pc2y8fdg2n1t" path="res://items/coin.gd" id="1_4ic2k"]
 [ext_resource type="Texture2D" uid="uid://qfq4ggo4uukb" path="res://assets/inventory/items/coin/coin-red.png" id="1_4uf25"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ic2k"]
@@ -84,6 +85,9 @@ animations = [{
 radius = 8.0
 
 [node name="CoinRed" type="Area2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_4ic2k")
+coin_value = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1lnbg")
