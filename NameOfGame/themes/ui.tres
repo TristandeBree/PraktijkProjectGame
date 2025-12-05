@@ -1,11 +1,29 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cghoexrjpxrh2"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://cghoexrjpxrh2"]
 
 [ext_resource type="FontFile" uid="uid://ba3bjnbsyad4e" path="res://assets/fonts/BoldPixels.ttf" id="1_k5lm2"]
+[ext_resource type="Texture2D" uid="uid://twqlgem4fkh6" path="res://assets/ui/square.png" id="2_h6ia1"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bpnmc"]
-modulate_color = Color(0.712129, 0.712129, 0.712129, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6ia1"]
+bg_color = Color(0.3536414, 0.23403358, 0.10829962, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vhwyg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhwv2"]
+bg_color = Color(0.5711108, 0.39263383, 0.20325607, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37kwd"]
 modulate_color = Color(0.230315, 0.230315, 0.230315, 1)
@@ -31,6 +49,9 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhwv2"]
+texture = ExtResource("2_h6ia1")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dy63b"]
 content_margin_left = 20.0
 content_margin_top = 20.0
@@ -43,8 +64,8 @@ Button/colors/font_outline_color = Color(1, 1, 1, 1)
 Button/constants/outline_size = 3
 Button/font_sizes/font_size = 24
 Button/fonts/font = null
-Button/styles/hover = SubResource("StyleBoxTexture_bpnmc")
-Button/styles/normal = SubResource("StyleBoxTexture_vhwyg")
+Button/styles/hover = SubResource("StyleBoxFlat_h6ia1")
+Button/styles/normal = SubResource("StyleBoxFlat_bhwv2")
 Button/styles/pressed = SubResource("StyleBoxTexture_37kwd")
 CheckButton/colors/font_color = Color(0, 0, 0, 1)
 CheckButton/colors/font_disabled_color = Color(0, 0, 0, 0.5)
@@ -64,6 +85,7 @@ Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 24
 Label/fonts/font = ExtResource("1_k5lm2")
+Panel/styles/panel = SubResource("StyleBoxTexture_bhwv2")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_dy63b")
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
