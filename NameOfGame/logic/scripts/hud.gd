@@ -15,6 +15,7 @@ func _ready() -> void:
 	PlayerData.connect("coins_updated", Callable(self, "update_coins"))
 	for child in hearts_parent.get_children():
 		hearts_list.append(child)
+	set_coin_label()
 
 func update_hearts_display():
 	var health = PlayerData.health
@@ -34,6 +35,8 @@ func update_coins():
 	coin_label.text = "[wave amp=40.0 freq=5.0 connected=1][color=green]" + str(PlayerData.coin_amount) + "[/color][/wave]"
 	wave_timer.start()
 
+func set_coin_label():
+	coin_label.text = str(PlayerData.coin_amount)
 
 func _on_wave_timer_timeout() -> void:
 	coin_label.text = str(PlayerData.coin_amount)

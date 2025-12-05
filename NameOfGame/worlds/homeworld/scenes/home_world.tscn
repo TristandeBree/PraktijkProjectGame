@@ -43,7 +43,7 @@ texture = ExtResource("4_b75s3")
 
 [node name="SafariPortal" parent="." instance=ExtResource("5_2133q")]
 position = Vector2(1647, 424)
-target_scene_path = "res://worlds/safari/scenes/safari_world.tscn"
+target_scene_path = "res://worlds/safari/scenes/safari_level_one.tscn"
 
 [node name="SeaPortal" parent="." instance=ExtResource("6_1vnqv")]
 position = Vector2(2581, 424)
