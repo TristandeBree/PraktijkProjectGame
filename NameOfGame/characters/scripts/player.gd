@@ -17,6 +17,7 @@ var start_location
 var health_label
 
 func _ready():
+	sprite.set("sprite_frames", PlayerData.spriteframes)
 	PlayerData.connect("player_damaged", Callable(self, "handle_damage"))
 	screen_size = get_viewport_rect().size
 	start_location = global_position
