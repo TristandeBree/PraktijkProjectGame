@@ -7,7 +7,6 @@ var kill_height = 500
 
 @export var inv: Inv
 
-@onready var hud = %HUD
 @onready var sprite = $AnimatedSprite2D
 @onready var particles = $leaf/CPUParticles2D
 
@@ -18,8 +17,7 @@ var start_location
 var health_label
 
 func _ready():
-	if hud:
-		health_label = hud.get_node("Label")
+	sprite.set("sprite_frames", PlayerData.spriteframes)
 	PlayerData.connect("player_damaged", Callable(self, "handle_damage"))
 	screen_size = get_viewport_rect().size
 	start_location = global_position
@@ -29,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	if global_position.y > kill_height:
-		respawn_player()
+		die()
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -52,7 +50,6 @@ func collect(item):
 	inv.insert(item)
 
 func handle_damage():
-	update_health_display()
 	if PlayerData.is_dead():
 		die()
 
@@ -69,12 +66,6 @@ func update_animation():
 		sprite.play("walk")
 	else:
 		sprite.play("idle")
-
-func update_health_display():
-	health_label.text = str(PlayerData.health)
-
-func respawn_player():
-	get_tree().reload_current_scene()
 	
 func Player():
 	pass
