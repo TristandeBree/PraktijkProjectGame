@@ -27,7 +27,7 @@ tile_set = ExtResource("3_72xmv")
 [node name="TreeMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
 position = Vector2(0, -31)
-tile_map_data = PackedByteArray("AAAwAAEAAQAAAAAAAABYAAEAAgABAAAAAABgAAEAAgABAAAAAABoAAEAAgACAAAAAABQAAEAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AABRAAwAAgAAAAAAAABZAAwAAgABAAAAAABhAAwAAgACAAAAAAAwAAwAAQAAAAAAAAA2AAwAAQAAAAAAAAA=")
 tile_set = ExtResource("9_pd26j")
 
 [node name="EnvironmentMapLayer" type="TileMapLayer" parent="."]
