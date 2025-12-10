@@ -25,11 +25,12 @@ red_coin_scene = ExtResource("3_bpl0m")
 [node name="HUD" parent="HUD" instance=ExtResource("1_whq2m")]
 unique_name_in_owner = true
 
-[node name="SumUI" parent="HUD" instance=ExtResource("2_ix4rs")]
+[node name="SumUI" parent="HUD" node_paths=PackedStringArray("lion") instance=ExtResource("2_ix4rs")]
 offset_left = 467.0
 offset_top = 303.0
 offset_right = 691.0
 offset_bottom = 373.0
+lion = NodePath("../../lion")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -80,9 +81,6 @@ position = Vector2(-3766, -77)
 [node name="SafariPortal" parent="." instance=ExtResource("6_008j7")]
 position = Vector2(22624, -256)
 
-[node name="lion" parent="." instance=ExtResource("14_bpl0m")]
-position = Vector2(-2526, -78)
-
 [node name="CactusEnemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_hm0sf")]
 position = Vector2(-2107, -80)
 player = NodePath("../Player")
@@ -125,6 +123,10 @@ player = NodePath("../Player")
 
 [node name="Snake3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_ix4rs")]
 position = Vector2(9281, 168)
+player = NodePath("../Player")
+
+[node name="lion" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_bpl0m")]
+position = Vector2(22287, -238)
 player = NodePath("../Player")
 
 [node name="RedCoinSpawns" type="Node" parent="."]
