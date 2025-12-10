@@ -26,9 +26,15 @@ func change_line():
 		dialog_index = 0
 		close_dialog()
 
-func open_dialog():
-	dialog_lines = load_script(dialog_script)
+func open_dialog(script_path: String):
+	if script_path != "":
+		dialog_lines = load_script(script_path)
+	else:
+		dialog_lines = load_script(dialog_script)
+		
+	dialog_index = 0
 	visible = true
+	change_line()
 
 func close_dialog():
 	visible = false

@@ -1,6 +1,9 @@
 extends Control
 
+signal sum_success
+
 @export var snake: CharacterBody2D
+@export var giraffe: Area2D
 
 @onready var number_one_label: Label = $NinePatchRect/GridContainer/NumberOne/Label
 @onready var operator_label: Label = $NinePatchRect/GridContainer/Operator/Label
@@ -13,6 +16,8 @@ var sum_info : Dictionary
 func _ready() -> void:
 	if snake:
 		snake.connect("hit_player", Callable(self, "_on_player_hit"))
+	if giraffe:
+		giraffe.connect("start_quest_sums", Callable(self, "_on_start_quest_sums"))
 	sum_info = Calculator.get_random_sum("EASY") # originally dependent on difficulty setting
 	close()
 
@@ -46,14 +51,21 @@ func fill_labels():
 
 func _on_answer_text_submitted(answer: String) -> void:
 	if answer.to_int() == sum_info["answer"]:
+		emit_signal("sum_success")
 		close()
-		snake.take_damage(1)
+		if snake:
+			snake.take_damage(1)
 	else:
 		close()
 		PlayerData.take_damage(1)
 		
 		
 func _on_player_hit():
+	sum_info = Calculator.get_random_sum("EASY")
+	fill_labels()
+	open()
+	
+func _on_start_quest_sums():
 	sum_info = Calculator.get_random_sum("EASY")
 	fill_labels()
 	open()

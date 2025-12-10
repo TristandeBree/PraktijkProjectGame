@@ -25,12 +25,13 @@
 
 [node name="HUD" parent="HUD" instance=ExtResource("1_8xs48")]
 
-[node name="SumUI" parent="HUD" node_paths=PackedStringArray("snake") instance=ExtResource("2_gbq4e")]
+[node name="SumUI" parent="HUD" node_paths=PackedStringArray("snake", "giraffe") instance=ExtResource("2_gbq4e")]
 offset_left = 467.0
 offset_top = 303.0
 offset_right = 691.0
 offset_bottom = 373.0
 snake = NodePath("../../Snake")
+giraffe = NodePath("../../Giraffe")
 
 [node name="DialogUI" parent="HUD" instance=ExtResource("3_k8ycn")]
 visible = false
@@ -109,7 +110,27 @@ position = Vector2(-591, 240)
 position = Vector2(8757, 65)
 target_scene_path = "res://worlds/safari/scenes/safari_level_two.tscn"
 
-[node name="Giraffe" parent="." node_paths=PackedStringArray("dialog_ui") instance=ExtResource("16_fax6y")]
+[node name="Giraffe" parent="." node_paths=PackedStringArray("dialog_ui", "sum_ui") instance=ExtResource("16_fax6y")]
+unique_name_in_owner = true
 position = Vector2(-398, 253)
 script = ExtResource("18_cd74u")
 dialog_ui = NodePath("../HUD/DialogUI")
+sum_ui = NodePath("../HUD/SumUI")
+
+[node name="CrystalMarkers" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="CrystalMarker" type="Marker2D" parent="CrystalMarkers"]
+position = Vector2(149, 234)
+
+[node name="CrystalMarker2" type="Marker2D" parent="CrystalMarkers"]
+position = Vector2(213, 227)
+
+[node name="CrystalMarker3" type="Marker2D" parent="CrystalMarkers"]
+position = Vector2(115, 225)
+
+[node name="CrystalMarker4" type="Marker2D" parent="CrystalMarkers"]
+position = Vector2(-3, 236)
+
+[node name="CrystalMarker5" type="Marker2D" parent="CrystalMarkers"]
+position = Vector2(-106, 231)

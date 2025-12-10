@@ -1,6 +1,10 @@
 extends StaticBody2D
 
+signal crystal_collected
+
 @export var item: InvItem
+
+var giraffe = null
 var player = null
 
 func _on_area_2d_body_entered(body):
@@ -12,13 +16,4 @@ func _on_area_2d_body_entered(body):
 
 func playercollect():
 	player.collect(item)
-
-@onready var giraffe = get_node("/root/Main/Giraffe")
-
-func _on_body_entered(body):
-	if body.name == "Player":
-		giraffe.crystals_collected += 1
-		queue_free()
-
-		if giraffe.crystals_collected >= giraffe.crystals_needed:
-			giraffe.quest_state = giraffe.QuestState.TALK_PART2
+	emit_signal("crystal_collected")

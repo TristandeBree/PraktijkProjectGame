@@ -44,7 +44,7 @@ func _open_dialog() -> void:
 	pressELabel.visible = false
 	get_tree().paused = true
 
-	dialog_ui.open_dialog()
+	dialog_ui.open_dialog("")
 	
 func _close_dialog() -> void:
 	get_tree().paused = false
