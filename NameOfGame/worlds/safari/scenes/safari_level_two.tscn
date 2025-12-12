@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://dbvkdctskuxbo"]
 
-[ext_resource type="Script" uid="uid://blx57afjwh712" path="res://worlds/safari/scenes/safari_level_two.gd" id="1_mfu4k"]
+[ext_resource type="Script" uid="uid://blx57afjwh712" path="res://worlds/safari/scripts/safari_level_two.gd" id="1_mfu4k"]
 [ext_resource type="Texture2D" uid="uid://x5oyyi1jjhjy" path="res://assets/backgrounds/safari/safari_background.png" id="1_sja4e"]
 [ext_resource type="PackedScene" uid="uid://2js5sxpl1u0" path="res://worlds/homeworld/hud.tscn" id="1_whq2m"]
 [ext_resource type="PackedScene" uid="uid://61n0605njhhw" path="res://items/coin_gold.tscn" id="2_7x1v6"]
