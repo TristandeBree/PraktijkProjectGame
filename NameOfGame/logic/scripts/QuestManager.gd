@@ -1,6 +1,7 @@
 extends Node
 
 const QUEST_START_SIGNAL = "firstQuest"
+const add_coins_signal = "add_coins"
 
 var purple_crystal_collected = 0
 var firstQuest = false
@@ -18,6 +19,12 @@ func _ready():
 		push_error("Dialogic.VAR is nog niet geïnitialiseerd!")
 	
 	Dialogic.signal_event.connect(Callable(self, "_on_dialogic_quest_start"))
+	Dialogic.signal_event.connect(Callable(self, "_on_dialogic_signal"))
+	
+	
+func _on_dialogic_signal(signal_name: String):
+	if signal_name == "add_coins":
+		give_coins(5)
 
 func _on_dialogic_quest_start(signal_name: String):
 	if signal_name == QUEST_START_SIGNAL:
@@ -41,9 +48,12 @@ func _on_dialogic_quest_start(signal_name: String):
 func collect_purple_crystal():
 	if firstQuest and purple_crystal_collected < TARGET_AMOUNT:
 		purple_crystal_collected += 1
-		Dialogic.VAR.set_variable("bao_buns_collected", purple_crystal_collected)
+		Dialogic.VAR.set_variable("purple_crystal_collected", purple_crystal_collected)
 		print("Bao buns verzameld: " + str(purple_crystal_collected))
 		
 		if purple_crystal_collected == TARGET_AMOUNT:
 			print("Quest doel voltooid! Ga terug naar de NPC.")
 			Dialogic.VAR.set_variable("quest_objective_met", true)
+
+func give_coins(amount: int):
+	PlayerData.add_coins(amount)
