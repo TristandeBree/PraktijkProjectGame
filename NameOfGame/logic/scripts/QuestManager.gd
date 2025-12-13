@@ -7,7 +7,6 @@ var purple_crystal_collected = 0
 var firstQuest = false
 var is_chatting: bool = false
 
-@onready var player = %Player
 @onready var player_inv: Inv = preload("res://inventory/playerInventory.tres")
 @onready var purple_crystal: InvItem = preload("res://inventory/items/purple_crystals.tres")
 
@@ -23,13 +22,6 @@ func _ready():
 	
 	
 func _on_dialogic_signal(signal_name: String):
-	if player:
-		if signal_name == "freeze_player":
-			player.set_physics_process(false)  
-		elif signal_name == "unfreeze_player":
-			player.set_physics_process(true)
-			is_chatting = false
-			
 	if signal_name == "add_coins":
 		PlayerData.add_coins(5)
 

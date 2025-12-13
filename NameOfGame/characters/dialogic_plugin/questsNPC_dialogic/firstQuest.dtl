@@ -1,5 +1,6 @@
 if {firstQuest} == true:
 	jump quest_return
+[signal arg="freeze_player"]
 join giraffe right
 giraffe: Hé avonturier! Ik heb jouw hulp nodig!
 join purple_crystal center
@@ -28,6 +29,7 @@ if {quest_objective_met} == true:
 label Goed
 [signal arg="add_coins"]
 giraffe: Fantastisch! Jij wordt een echte safari-held. Tot binnenkort!!
+[signal arg="unfreeze_player"]
 set {firstQuest} = false
 [end_timeline]
 label Fout
