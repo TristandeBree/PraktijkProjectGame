@@ -1,12 +1,13 @@
 extends Node
 
 const QUEST_START_SIGNAL = "firstQuest"
-const add_coins_signal = "add_coins"
+const TARGET_AMOUNT = 5
 
 var purple_crystal_collected = 0
 var firstQuest = false
-const TARGET_AMOUNT = 5
+var is_chatting: bool = false
 
+@onready var player = %Player
 @onready var player_inv: Inv = preload("res://inventory/playerInventory.tres")
 @onready var purple_crystal: InvItem = preload("res://inventory/items/purple_crystals.tres")
 
@@ -17,16 +18,21 @@ func _ready():
 		Dialogic.VAR.set_variable("firstQuest", firstQuest)
 	else:
 		push_error("Dialogic.VAR is nog niet geïnitialiseerd!")
-	
-	Dialogic.signal_event.connect(Callable(self, "_on_dialogic_quest_start"))
+
 	Dialogic.signal_event.connect(Callable(self, "_on_dialogic_signal"))
 	
 	
 func _on_dialogic_signal(signal_name: String):
+	if player:
+		if signal_name == "freeze_player":
+			player.set_physics_process(false)  
+		elif signal_name == "unfreeze_player":
+			player.set_physics_process(true)
+			is_chatting = false
+			
 	if signal_name == "add_coins":
 		PlayerData.add_coins(5)
 
-func _on_dialogic_quest_start(signal_name: String):
 	if signal_name == QUEST_START_SIGNAL:
 		firstQuest = true
 
@@ -44,6 +50,8 @@ func _on_dialogic_quest_start(signal_name: String):
 			
 		else:
 			Dialogic.VAR.set_variable("quest_objective_met", false)
+			
+
 
 func collect_purple_crystal():
 	if firstQuest and purple_crystal_collected < TARGET_AMOUNT:
@@ -54,3 +62,4 @@ func collect_purple_crystal():
 		if purple_crystal_collected == TARGET_AMOUNT:
 			print("Quest doel voltooid! Ga terug naar de NPC.")
 			Dialogic.VAR.set_variable("quest_objective_met", true)
+			
