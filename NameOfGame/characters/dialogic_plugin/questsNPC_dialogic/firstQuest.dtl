@@ -18,7 +18,7 @@ if {quest_objective_met} == false:
 	giraffe: Je hebt nog niet genoeg paarse kristallen.
 	[end_timeline]
 if {quest_objective_met} == true:
-	Bruno: Je hebt ze allemaal gevonden!" Nu de laatste test\: Wat is 21 + 15
+	giraffe: Je hebt ze allemaal gevonden!" Nu de laatste test\: Wat is 21 + 15
 	- 37
 		jump Fout
 	- 36
@@ -26,9 +26,10 @@ if {quest_objective_met} == true:
 	- 35
 		jump Fout
 label Goed
-Bruno: Fantastisch! Jij wordt een echte safari-held. Tot binnenkort!!
+[signal arg="add_coins"]
+giraffe: Fantastisch! Jij wordt een echte safari-held. Tot binnenkort!!
 set {firstQuest} = false
 [end_timeline]
 label Fout
-Bruno: Helaas, dat is niet het juist. Denk nog even na!
+giraffe: Helaas, dat is niet het juist. Denk nog even na!
 jump quest_return
