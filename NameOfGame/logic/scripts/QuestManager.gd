@@ -24,7 +24,7 @@ func _ready():
 	
 func _on_dialogic_signal(signal_name: String):
 	if signal_name == "add_coins":
-		give_coins(5)
+		PlayerData.add_coins(5)
 
 func _on_dialogic_quest_start(signal_name: String):
 	if signal_name == QUEST_START_SIGNAL:
@@ -54,6 +54,3 @@ func collect_purple_crystal():
 		if purple_crystal_collected == TARGET_AMOUNT:
 			print("Quest doel voltooid! Ga terug naar de NPC.")
 			Dialogic.VAR.set_variable("quest_objective_met", true)
-
-func give_coins(amount: int):
-	PlayerData.add_coins(amount)
