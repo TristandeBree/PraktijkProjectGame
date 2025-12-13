@@ -1,0 +1,17 @@
+join mouse right
+mouse: Meneer de olifant, je zat weer op mijn kaas!
+join elephant center
+elephant: Oeps… dat was niet expres. Ik ben gewoon… groot.
+mouse: Ja, maar groot zijn betekent niet dat je altijd gelijk hebt!
+elephant: Oh nee? Ik ben tien keer zo groot als jij!
+mouse: Misschien… maar wie is slimmer?
+elephant: Dat weet ik niet. Zullen we het eerlijk oplossen?
+mouse: Ja! Met… REKENSOMMEN!
+label back_to_sum
+elephant: Wat is 12 + 16?
+[text_input text="12 + 16 = ..."]
+if {anwser_sum} == 28.0:
+	elephant: Dat is goed!
+else:
+	elephant: We kunnen het!
+	jump back_to_sum

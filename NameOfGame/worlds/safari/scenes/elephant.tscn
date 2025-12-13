@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdhnvr428gp20"]
+[gd_scene load_steps=4 format=3 uid="uid://cdhnvr428gp20"]
 
+[ext_resource type="Script" uid="uid://td27qboo4qeo" path="res://worlds/safari/scripts/elephant.gd" id="1_l3rl7"]
 [ext_resource type="Texture2D" uid="uid://v08ikb71k81m" path="res://assets/characters/NPCS/safari/elephant.png" id="1_x8rbu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x8rbu"]
@@ -7,6 +8,7 @@ radius = 16.505978
 
 [node name="Elephant" type="Area2D"]
 scale = Vector2(2.5625, 2.5625)
+script = ExtResource("1_l3rl7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_x8rbu")
